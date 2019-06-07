@@ -8,8 +8,6 @@
       data: { confirm: "Are you sure?" } %>
 <% end %>
 
-<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
-
 <h1>Add a new part to the Cocktail</h1>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
@@ -24,7 +22,6 @@
 <%= review.rating %>
 <% end %>
 
-<%= link_to "Add a review", new_cocktail_review_path(@cocktail) %>
 
 <h1>Add a review for <%= @cocktail.name %></h1>
 
