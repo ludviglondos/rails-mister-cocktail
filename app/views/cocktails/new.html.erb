@@ -1,15 +1,13 @@
 <div class="container">
   <h1>Create a new Cocktail</h1>
 
-  <%= form_for(@cocktail) do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
-
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= simple_form_for (@cocktail) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit %>
   <% end %>
-
 </div>
 
 <%= link_to "Back to Cocktails", cocktails_path   %>

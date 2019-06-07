@@ -1,4 +1,9 @@
-<h1><%= @cocktail.name%></h1>
+<div class="cocktail-banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+  url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+  <h1><%= @cocktail.name%></h1>
+</div>
+
 
 <% @doses.each do |dose| %>
 <%= dose.ingredient.name %>
@@ -8,11 +13,11 @@
       data: { confirm: "Are you sure?" } %>
 <% end %>
 
-<h1>Add a new part to the Cocktail</h1>
+<h2>Add an ingredient to <%= @cocktail.name %></h2>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
-  <%= f.association :ingredient %>
+  <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
   <%= f.button :submit %>
 <% end %>
 
@@ -23,7 +28,7 @@
 <% end %>
 
 
-<h1>Add a review for <%= @cocktail.name %></h1>
+<h2>Add a review for <%= @cocktail.name %></h2>
 
 
   <%= form_for ([@cocktail, @review]) do |f| %>
