@@ -1,0 +1,10 @@
+.banner {
+  display: flex;
+  height: 150px;
+  background-color: $orange;
+  justify-content: space-between;
+  h1 {
+    align-item: center;
+  }
+}
+

@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsMisterCocktail</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<head>
+  <title>LaddysCocktailExperience</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <div class="banner">
+    <div>
+      <%= link_to "Cocktail Menu", cocktails_path, class: "btn btn-danger"   %>
+    </div>
+    <div class="banner-header">
+      <h1>Laddy's Cocktail Experience</h1>
+    </div>
+    <div>
+      <i class="fas fa-glass-martini-alt"></i><%= link_to("Add a new Cocktail", new_cocktail_path, class: "btn btn-primary") %>
+    </div>
+  </div>
+  <div class="main">
     <%= yield %>
+  </div>
+
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      We can not guarantee that no cocktails were harmed in the making of this site <i class="fas fa-heart"></i>
+    </div>
+  </div>
   <%= javascript_pack_tag "application" %>
-  </body>
+</body>
 </html>
